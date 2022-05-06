@@ -1,11 +1,42 @@
-language: generic
+# machine:
+#   environment:
+#     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+#   node:
+#     version: 7.10.0
 
-sudo: required
-services:
-  - docker
+# dependencies:
+#   override:
+#     - yarn
+#   cache_directories:
+#     - ~/.cache/yarn
+#   pre:
+#     - yarn global add now
 
-before_install:
-  docker build -t TESTME -f Dockerfile.dev .
+# test:
+#   override:
+#     - yarn test
 
-script:
-  - docker run -e CI=ture TESTME npm run test -- --coverage
+# deployment:
+#   development:
+#     branch: master
+#     commands:
+#       - now -t ${NOW_TOKEN}
+#       - now -t ${NOW_TOKEN} alias foo-dev
+#   production:
+#     branch: production
+#     commands:
+#       - now -t ${NOW_TOKEN}
+#       - now -t ${NOW_TOKEN} alias foo
+
+# .travis.uml
+# language: generic
+
+# sudo: required
+# services:
+#   - docker
+
+# before_install:
+#   docker build -t TESTME -f Dockerfile.dev .
+
+# script:
+#   - docker run -e CI=ture TESTME npm run test -- --coverage
