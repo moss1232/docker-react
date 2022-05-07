@@ -29,14 +29,14 @@
 #       - now -t ${NOW_TOKEN} alias foo
 
 # .travis.uml
-# language: generic
+language: generic
 
-# sudo: required
-# services:
-#   - docker
+sudo: required
+services:
+  - docker
 
-# before_install:
-#   docker build -t TESTME -f Dockerfile.dev .
+before_install:
+  docker build -t TESTME -f Dockerfile.dev .
 
-# script:
-#   - docker run -e CI=ture TESTME npm run test -- --coverage
+script:
+  - docker run -e CI=ture TESTME npm run test -- --coverage
