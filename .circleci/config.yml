@@ -29,14 +29,14 @@ jobs:
           command: npm run test
           working_directory: ~/repo/frontend
 
-# workflows:
-#   version: 2
-#   test:
-#     jobs:
-#       - test_frontend:
-#           filters:
-#             branches:
-#               ignore: main
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test_frontend:
+          filters:
+            branches:
+              ignore: main
 
 # version: 2.1
 # jobs:
